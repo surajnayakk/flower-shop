@@ -687,6 +687,10 @@ footer .container {
   font-size: 16px;
 }
 
+.menu_hamburger {
+  display: none;
+}
+
 @media (max-width: 1070px) {
   .main_container {
     flex-direction: column;
@@ -720,8 +724,32 @@ footer .container {
 }
 
 @media (max-width: 880px) {
-  nav {
+ nav, .nav_actions {
     display: none;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+
+  nav.open  {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #ffffff;
+    height: 100dvh;
+    width: 70%;
+    max-width: 300px;
+    padding-block: 80px 30px;
+    z-index: 9;
+    display: block;
+  }
+
+  .navigation a {
+    color: #000000;
+    font-size: 20px;
+    padding: 20px;
   }
 
   .creations_card {
@@ -748,6 +776,49 @@ footer .container {
     padding-block: 50px;
   }
 
+  .menu_hamburger {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 99;
+    margin-block-start: 35px;
+  }
+
+  .hamburger_line {
+    background-color: #ffffff;
+    height: 5px;
+    width: 100%;
+
+  }
+
+  .menu_hamburger.open .top_line {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu_hamburger.open .bottom_line {
+    transform: rotate(-45deg) translate(9px, -9px);
+  }
+
+  .menu_hamburger.open .middle_line {
+    opacity: 0;
+  }
+
+  .menu_hamburger.open .hamburger_line {
+    background-color: #000000;
+  }
+
+  .menu_hamburger.open {
+    position: fixed;
+    right: 20px;
+  }
+
+  header .container {
+    justify-content: space-between;
+    align-items: unset;
+  }
   
 }
 
